@@ -1,27 +1,33 @@
+# yaml-language-server: $schema=https://cubic.dev/schema/cubic-repository-config.schema.json
+
 version: 1
+
 reviews:
   enabled: true
   sensitivity: high
   incremental_commits: true
   check_drafts: false
   architecture_diagrams: true
-  show_ai_feedback_buttons: true
   resolve_threads_when_addressed: true
-  custom_instructions: "SDK packages require deep type safety, comprehensive exports, and strict versioning."
+  custom_instructions: |
+    Flagship Portfolio: Extreme focus on high-fidelity motion, visual perfection, and the 'WOW' factor.
+
   ignore:
     files:
       - "**/node_modules/**"
       - "**/dist/**"
       - "**/*.lock*"
+
   custom_rules:
-    - name: "Code: Strict Types"
-      description: "NEVER use 'any'. Enforce explicit return types for all public API members."
-    - name: "SDK: Export Strategy"
-      description: "Ensure new features are properly exported in package.json and index.ts. Flag missing .d.ts files."
-    - name: "Aesthetics: Developer Experience"
-      description: "Ensure code is commented with JSDoc for better IDE support (Intellisense)."
+    - name: "VISUAL_EXCELLENCE"
+      description: "Ensure every UI element feels premium. Smooth gradients, glassmorphism, and CRT-style effects are prioritized."
+    - name: "MOTION_FIDELITY"
+      description: "Framer Motion usage should be optimized. Prefer @pcstyle/motion primitives for consistency."
+
 pr_descriptions:
   generate: true
-  instructions: "Highlight breaking changes and new API capabilities."
+  instructions: |
+    Highlight UI/UX enhancements and visual polish.
+
 issues:
   fix_with_cubic_buttons: true
